@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/dist/drag.min.js" defer></script>
+    <script src="./index.js" defer></script>
+    <style>
+        body {
+            margin: 0;
+            touch-action: none;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        div {
+            width: 200px;
+            height: 150px;
+            background-color: #b1b1b1;
+            cursor: move;
+            user-select: none;
+        }
+
+        #zone {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="zone">You cannot overlap me</div>
+    <div id="box">Move Me</div>
+</body>
+</html>
