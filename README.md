@@ -37,7 +37,7 @@ elm.addEventListener("ezgpinchmove", onPinchMove)
 elm.addEventListener("ezgpinchend", onPinchEnd)
 ```
 
-[Live Demo](https://mhmd-22.github.io/ezg-gesture/) ([Code](demos/))
+[Live Demo](#live-demos)([Code](demos/))
 
 
 ## Drag Events
@@ -88,6 +88,8 @@ Available options:
 
 ### `ezgpinchstart`
 **cancelable**: Yes, with `e.preventDefault()`
+
+
 **paramaters**:
 ```javascript
 startTouches
@@ -96,6 +98,7 @@ originalEvent
 
 ### `ezgpinchmove`
 **cancelable**: Yes, It will stop calculating `lastXXX` paramaters such as `lastOffset` and `lastDist`
+
 **paramaters**:
 * `dx, dy`: difference between the two touches
 * `da`: angle difference from last movement
@@ -112,6 +115,7 @@ originalEvent
 
 ### `ezgpinchend`
 **cancelable**: No
+
 **paramaters**:
 * `startTouches`
 * `lastTouches`
