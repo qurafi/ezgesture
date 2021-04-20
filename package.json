@@ -1,6 +1,6 @@
 {
     "name": "ezgesture",
-    "version": "0.0.1",
+    "version": "0.0.1-beta",
     "description": "Easily add gestures functionality with simple native DOM events",
     "exports": {
         ".": "./lib/index.js",
@@ -8,10 +8,10 @@
         "./drag": "./lib/drag.js"
     },
     "scripts": {
-        "build": "rollup -c",
+        "dev": "rollup -cw",
         "copy-dist": "mkdir -p demos/dist && cp -r dist/ demos/",
         "publish-ghp": "copy-dist && git subtree push --prefix dist origin gh-pages",
-        "prepublishOnly": "build"
+        "prepublishOnly": "rollup -c"
     },
     "files": [
         "lib/*",

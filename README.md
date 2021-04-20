@@ -1,7 +1,7 @@
 Easily add gestures functionality with simple native DOM events
 
 ## Installation
-`npm i ezg-gesture`
+`npm i ezgesture@beta`
 
 ## Quick Start
 ```javascript
