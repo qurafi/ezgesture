@@ -1,4 +1,22 @@
+# EZGesture(~1KB Gzipped)
+![npm (tag)](https://img.shields.io/npm/v/ezgesture/beta) ![NPM](https://img.shields.io/npm/l/ezgesture)
+
 Easily add gestures functionality with simple native DOM events
+
+
+- [EZGesture(~1KB Gzipped)](#ezgesture1kb-gzipped)
+  - [Installation](#installation)
+  - [Quick Start](#quick-start)
+  - [Drag Events](#drag-events)
+  - [Pinch Events](#pinch-events)
+    - [`ezgpinchstart`](#ezgpinchstart)
+    - [`ezgpinchmove`](#ezgpinchmove)
+    - [`ezgpinchend`](#ezgpinchend)
+  - [Live Demos](#live-demos)
+  - [Integrating with other frameworks](#integrating-with-other-frameworks)
+    - [Svelte](#svelte)
+  - [Browser Support](#browser-support)
+
 
 ## Installation
 `npm i ezgesture@beta`
@@ -19,11 +37,10 @@ elm.addEventListener("ezgpinchmove", onPinchMove)
 elm.addEventListener("ezgpinchend", onPinchEnd)
 ```
 
-#### [Live Demo](https://mhmd-22.github.io/ezg-gesture/) ([Code](demos/))
+[Live Demo](https://mhmd-22.github.io/ezg-gesture/) ([Code](demos/))
 
 
-##Drag Events
-
+## Drag Events
 To enable drag events:
 ```javascript
 EZG.enableDragEvent(elm, options?)
@@ -32,9 +49,9 @@ EZG.enableDragEvent(elm, options?)
 You can also supply `threshold` in options to set minimum distance to trigger events
 
 **Events**
-`ezgdragstart` - cancelable with `e.preventDefault()`
-`ezgdragmove` - cancelable. will stop calculating last offset.
-`ezgdragend`
+- `ezgdragstart` - cancelable with `e.preventDefault()`
+- `ezgdragmove` - cancelable. will stop calculating last offset.
+- `ezgdragend`
 
 
 **Events paramters:**
@@ -58,7 +75,7 @@ movementX, movementY
 originalEvent
 ```
 
-##Pinch Events
+## Pinch Events
 
 To enable pinch events:
 ```javascript
@@ -69,7 +86,7 @@ Available options:
 * `distanceThreshold`: minimum distance to trigger event
 * `angleThreshold`: minimum angle(radians)
 
-### `ezgpinchstart`:
+### `ezgpinchstart`
 **cancelable**: Yes, with `e.preventDefault()`
 **paramaters**:
 ```javascript
@@ -77,7 +94,7 @@ startTouches
 originalEvent
 ```
 
-### `ezgpinchmove`:
+### `ezgpinchmove`
 **cancelable**: Yes, It will stop calculating `lastXXX` paramaters such as `lastOffset` and `lastDist`
 **paramaters**:
 * `dx, dy`: difference between the two touches
@@ -102,6 +119,13 @@ originalEvent
 * `lastDist`
 * `lastAngle`
 
+## Live Demos
+* [Basic drag](https://mhmd-22.github.io/ezgesture/Drag/dragElement/)
+* [Paint](https://mhmd-22.github.io/ezgesture/Drag/paint/)
+* [Swipe gesture](https://mhmd-22.github.io/ezgesture/Drag/swipe/)
+* [Pinch gesture](https://mhmd-22.github.io/ezgesture/Pinch/rotate/)
+
+Source code available in [demos folder](demos/)
 
 ## Integrating with other frameworks
 

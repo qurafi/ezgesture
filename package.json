@@ -10,7 +10,7 @@
     "scripts": {
         "dev": "rollup -cw",
         "copy-dist": "mkdir -p demos/dist && cp -r dist/ demos/",
-        "publish-ghp": "copy-dist && git subtree push --prefix dist origin gh-pages",
+        "publish-ghp": "npm run copy-dist && git subtree push --prefix demos origin gh-pages",
         "prepublishOnly": "rollup -c"
     },
     "files": [
@@ -30,16 +30,19 @@
         "event",
         "interaction"
     ],
-    "author": "Mohammed Al-Qurafi",
-    "license": "MIT",
     "devDependencies": {
         "rollup": "^2.41.5",
         "rollup-plugin-terser": "^7.0.2",
         "terser": "^5.6.0"
     },
-    "husky": {
-        "hooks": {
-            "pre-push": "npm run gh-page"
-        }
+    "author": "Mohammed Al-Qurafi",
+    "license": "MIT",
+    "homepage": "https://github.com/mhmd-22/ezgesture#readme",
+    "bugs": {
+        "url": "https://github.com/mhmd-22/ezgesture/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mhmd-22/ezgesture.git"
     }
 }
