@@ -19,7 +19,20 @@ Easily add gestures functionality with simple native DOM events
 
 
 ## Installation
+**NPM**
 `npm i ezgesture`
+
+**CDN:**
+
+```html
+<!-- Full bundle -->
+<script src="https://cdn.jsdelivr.net/npm/ezgesture@1.0.1/dist/index.min.js"></script>
+<!-- Drag only -->
+<script src="https://cdn.jsdelivr.net/npm/ezgesture@1.0.1/dist/drag.min.js"></script>
+<!-- Pinch only -->
+<script src="https://cdn.jsdelivr.net/npm/ezgesture@1.0.1/dist/pinch.min.js"></script>
+```
+
 
 ## Quick Start
 ```javascript
