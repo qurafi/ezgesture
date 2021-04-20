@@ -1,6 +1,6 @@
 {
     "name": "ezgesture",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Easily add gestures functionality with simple native DOM events",
     "exports": {
         ".": "./lib/index.js",

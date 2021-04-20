@@ -141,6 +141,7 @@ originalEvent
 * [Paint](https://mhmd-22.github.io/ezgesture/Drag/paint/)
 * [Swipe gesture](https://mhmd-22.github.io/ezgesture/Drag/swipe/)
 * [Pinch gesture](https://mhmd-22.github.io/ezgesture/Pinch/rotate/)
+* [Svelte example](https://svelte.dev/repl/e426f80d0f31427f85943e11ad337a36?version=3.37.0)
 
 Source code available in [demos folder](demos/)
 
@@ -152,6 +153,8 @@ You could also listen to this event with framework that uses native dom events. 
 ```svelte
 <div use:enablePinchEvents on:ezgpinchmove={onPinch}></div>
 ```
+
+[Example](https://svelte.dev/repl/e426f80d0f31427f85943e11ad337a36?version=3.37.0)
 
 <!-- Full working example in this REPL:  -->
 
