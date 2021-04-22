@@ -1,5 +1,5 @@
 # EZGesture(~1KB Gzipped)
-![npm (tag)](https://img.shields.io/npm/v/ezgesture) ![NPM](https://img.shields.io/npm/l/ezgesture)
+![npm (tag)](https://img.shields.io/npm/v/ezgesture) ![GitHub](https://img.shields.io/github/license/mhmd-22/ezgesture)
 
 Easily add gestures functionality with simple native DOM events
 
