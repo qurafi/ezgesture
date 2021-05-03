@@ -11,7 +11,7 @@
     "scripts": {
         "dev": "rollup -cw",
         "copy-dist": "mkdir -p demos/dist && cp -r dist/ demos/",
-        "publish-ghp": "npm run copy-dist && git subtree push --prefix demos origin gh-pages",
+        "publish-ghp": "git subtree push --prefix demos origin gh-pages",
         "prepublishOnly": "rollup -c"
     },
     "files": [
