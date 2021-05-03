@@ -7,13 +7,14 @@ Easily add gestures functionality with simple native DOM events
 - [EZGesture(~1KB Gzipped)](#ezgesture1kb-gzipped)
   - [Installation](#installation)
   - [Quick Start](#quick-start)
-  - [Drag Events](#drag-events)
-  - [Pinch Events](#pinch-events)
+  - [Usage](#usage)
+    - [Drag Events](#drag-events)
+    - [Pinch Events](#pinch-events)
     - [`ezgpinchstart`](#ezgpinchstart)
     - [`ezgpinchmove`](#ezgpinchmove)
     - [`ezgpinchend`](#ezgpinchend)
-  - [Live Demos](#live-demos)
-  - [Integrating with other frameworks](#integrating-with-other-frameworks)
+    - [Longpress Events](#longpress-events)
+  - [Integration with other frameworks](#integration-with-other-frameworks)
     - [Svelte](#svelte)
   - [Browser Support](#browser-support)
 
@@ -26,11 +27,13 @@ Easily add gestures functionality with simple native DOM events
 
 ```html
 <!-- Full bundle -->
-<script src="https://cdn.jsdelivr.net/npm/ezgesture@1.0.1/dist/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ezgesture@1.1.0/dist/index.min.js"></script>
 <!-- Drag only -->
-<script src="https://cdn.jsdelivr.net/npm/ezgesture@1.0.1/dist/drag.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ezgesture@1.1.0/dist/drag.min.js"></script>
 <!-- Pinch only -->
-<script src="https://cdn.jsdelivr.net/npm/ezgesture@1.0.1/dist/pinch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ezgesture@1.1.0/dist/pinch.min.js"></script>
+<!-- Longpress only -->
+<script src="https://cdn.jsdelivr.net/npm/ezgesture@1.1.0/dist/longpress.min.js"></script>
 ```
 
 
@@ -48,12 +51,20 @@ EZG.enablePinchEvents(elm)
 elm.addEventListener("ezgpinchstart", onPinchStart)
 elm.addEventListener("ezgpinchmove", onPinchMove)
 elm.addEventListener("ezgpinchend", onPinchEnd)
+
+// longpress events
+EZG.enablePinchEvents(elm, {duration: 700})
+elm.addEventListener("ezglongpress", onLongPress)
 ```
+[Full Demo](https://mhmd-22.github.io/ezgesture/)
 
-[Live Demo](#live-demos)([Code](demos/))
+Source code available in [demos folder](demos/)
 
 
-## Drag Events
+
+
+## Usage
+### Drag Events
 To enable drag events:
 ```javascript
 EZG.enableDragEvent(elm, options?)
@@ -88,7 +99,7 @@ movementX, movementY
 originalEvent
 ```
 
-## Pinch Events
+### Pinch Events
 
 To enable pinch events:
 ```javascript
@@ -136,27 +147,24 @@ originalEvent
 * `lastDist`
 * `lastAngle`
 
-## Live Demos
-* [Basic drag](https://mhmd-22.github.io/ezgesture/Drag/dragElement/)
-* [Paint](https://mhmd-22.github.io/ezgesture/Drag/paint/)
-* [Swipe gesture](https://mhmd-22.github.io/ezgesture/Drag/swipe/)
-* [Pinch gesture](https://mhmd-22.github.io/ezgesture/Pinch/rotate/)
-* [Svelte example](https://svelte.dev/repl/e426f80d0f31427f85943e11ad337a36?version=3.37.0)
+### Longpress Events
 
-Source code available in [demos folder](demos/)
+To enable longpress events:
+```javascript
+EZG.enableLongPressEvents(elm, {duration: ms})
+```
+The default duration is `700ms`. and it has only one parameter `originalEvent`
 
-## Integrating with other frameworks
+## Integration with other frameworks
 
 ### Svelte
 You could also listen to this event with framework that uses native dom events. For example in svelte you could use:
 
 ```svelte
-<div use:enablePinchEvents on:ezgpinchmove={onPinch}></div>
+<div use:enablePinchEvents={{options}} on:ezgpinchmove={onPinch}></div>
 ```
 
 [Example](https://svelte.dev/repl/e426f80d0f31427f85943e11ad337a36?version=3.37.0)
-
-<!-- Full working example in this REPL:  -->
 
 ## Browser Support
 Should support most of latest 5 years browsers. if you want more support you could through polyfills
