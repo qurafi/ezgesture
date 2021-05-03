@@ -5,6 +5,8 @@ EZG.enableDragEvents(div);
 let divOffsetX = 0;
 let divOffsetY = 0;
 
+console.log("hello");
+
 div.addEventListener("ezgdragmove", (e) => {
     const { movementX, movementY } = e.detail;
 
