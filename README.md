@@ -53,7 +53,7 @@ elm.addEventListener("ezgpinchmove", onPinchMove)
 elm.addEventListener("ezgpinchend", onPinchEnd)
 
 // longpress events
-EZG.enablePinchEvents(elm, {duration: 700})
+EZG.enableLongPressEvents(elm, {duration: 700})
 elm.addEventListener("ezglongpress", onLongPress)
 ```
 [Full Demo](https://mhmd-22.github.io/ezgesture/)
