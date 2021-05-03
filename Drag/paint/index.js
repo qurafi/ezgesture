@@ -1,13 +1,17 @@
 const canvas = document.querySelector("canvas");
+const ctx = canvas.getContext("2d");
 EZG.enableDragEvents(canvas);
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+window.onresize = function () {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-const ctx = canvas.getContext("2d");
-ctx.lineWidth = 5;
-ctx.lineCap = "round";
-ctx.lineJoin = "round";
+    ctx.lineWidth = 5;
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+};
+
+window.onresize();
 
 canvas.addEventListener("ezgdragmove", (e) => {
     const { clientX, clientY, lastX, lastY } = e.detail;

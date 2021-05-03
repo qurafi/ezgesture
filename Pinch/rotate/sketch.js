@@ -79,5 +79,5 @@ function draw() {
     translate(width / 2, height / 2);
     rotate(pinchAngle);
     textAlign(CENTER, CENTER);
-    text("Rotate Me", 0, 0);
+    text("Pinch and Rotate Me", 0, 0);
 }

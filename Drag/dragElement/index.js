@@ -1,6 +1,5 @@
-const div = document.getElementById("box");
 const zone = document.getElementById("zone");
-
+const div = document.getElementById("box");
 EZG.enableDragEvents(div);
 
 let divOffsetX = 0;
