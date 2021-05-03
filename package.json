@@ -10,6 +10,7 @@
     },
     "scripts": {
         "dev": "rollup -cw",
+        "build": "rollup -c",
         "copy-dist": "mkdir -p demos/dist && cp -r dist/ demos/",
         "publish-ghp": "git subtree push --prefix demos origin gh-pages",
         "prepublishOnly": "rollup -c"

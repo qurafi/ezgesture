@@ -3,8 +3,6 @@ EZG.enableDragEvents(div);
 
 const maxOffset = 200;
 
-console.log(EZG.enableDragEvents);
-
 div.addEventListener("ezgdragmove", (e) => {
     const { offsetX } = e.detail;
 

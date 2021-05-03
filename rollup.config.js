@@ -10,14 +10,6 @@ export default files.map((file) => ({
         name: "EZG",
         extend: file !== "index",
         sourcemap: true,
-        // plugins: [terser()],
-    },
-    output: {
-        file: `demos/dist/${file}.min.js`,
-        format: "umd",
-        name: "EZG",
-        extend: file !== "index",
-        sourcemap: true,
-        // plugins: [terser()],
+        plugins: [terser()],
     },
 }));
