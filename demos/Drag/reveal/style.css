@@ -1,0 +1,45 @@
+html {
+    height: 100vh;
+}
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    height: 100%;
+}
+
+
+aside {
+    position: fixed;
+    top: 0;
+    width: max(25vw, 200px);
+    height: 100%;
+    background-color: tomato;
+    padding: 1em;
+    color:white;
+    display: none;
+    user-select: none;
+
+}
+
+aside.active {
+    box-shadow: -12px 0 50px rgba(93, 50, 50, 0.8)
+}
+
+main {
+    padding: 1em 4em
+}
+
+#menu {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    margin: 0;
+    margin-top: 1em;
+    font-size: 24pt;
+    cursor: pointer;
+    -webkit-tap-highlight-color: #00000000; 
+}
+
+input {
+    padding: .5em 1em;
+}

@@ -1,14 +1,13 @@
 const div = document.querySelector("div");
 EZG.enableDragEvents(div);
 
-const maxOffset = Math.min(window.innerWidth / 4, 300);
+const maxOffset = 200;
 
 div.addEventListener("ezgdragmove", (e) => {
     const { offsetX } = e.detail;
 
     const p = Math.abs(offsetX) / maxOffset;
-
-    div.style.transform = `translate(${offsetX}px, 0px)`;
+    div.style.transform = `translateX(${offsetX}px)`;
     div.style.opacity = 1 - p;
 });
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,31 +12,34 @@
         body {
             margin: 0;
             touch-action: none;
-        }
-
-        * {
-            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
         div {
             width: 200px;
             height: 150px;
-            background-color: #b1b1b1;
-            cursor: move;
             user-select: none;
+            background-color: #b1b1b1;
+        }
+
+        #box {
+            cursor: move;
         }
 
         #zone {
             position: absolute;
             left: 50%;
             top: 50%;
+            transform: translate(-50%, -50%);
         }
-
-
     </style>
 </head>
+
 <body>
     <div id="zone">You cannot overlap me</div>
-    <div id="box">Move Me</div>
+    <div id="box">
+        <h3>Drag me</h3>
+    </div>
 </body>
+
 </html>

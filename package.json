@@ -5,7 +5,8 @@
     "exports": {
         ".": "./lib/index.js",
         "./pinch": "./lib/pinch.js",
-        "./drag": "./lib/drag.js"
+        "./drag": "./lib/drag.js",
+        "./longpress": "./lib/longpress.js"
     },
     "scripts": {
         "dev": "rollup -cw",

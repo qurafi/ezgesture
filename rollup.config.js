@@ -1,6 +1,6 @@
 import { terser } from "rollup-plugin-terser";
 
-const files = ["drag", "pinch", "index"];
+const files = ["drag", "pinch", "index", "longpress"];
 
 export default files.map((file) => ({
     input: `lib/${file}.js`,
