@@ -4,25 +4,23 @@
     (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.EZG = global.EZG || {}));
 }(this, (function (exports) { 'use strict';
 
-    function dispatchCustomEvent(name, elm, detail, cancelable = true) {
-        return !elm.dispatchEvent(
-            new CustomEvent(`ezg${name}`, { detail, cancelable })
-        );
+    function dispatchCustomEvent(name, elm, detail, cancelable) {
+        if (cancelable === void 0) { cancelable = true; }
+        return !elm.dispatchEvent(new CustomEvent("ezg" + name, { detail: detail, cancelable: cancelable }));
     }
 
-    function enableLongPressEvents(elm, opt = {}) {
+    function enableLongPressEvents(elm, opt) {
+        if (opt === void 0) { opt = {}; }
         function onPointerDown(e) {
-            const timeout = setTimeout(() => {
+            var timeout = setTimeout(function () {
                 dispatchCustomEvent("longpress", elm, {
                     originalEvent: e,
                 });
             }, opt.duration || 700);
-
             function onPointerUp() {
                 clearTimeout(timeout);
             }
-
-            const options = { once: true };
+            var options = { once: true };
             elm.addEventListener("touchend", onPointerUp, options);
             elm.addEventListener("mouseup", onPointerUp, options);
         }
@@ -35,4 +33,4 @@
     Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
-//# sourceMappingURL=longpress.min.js.map
+//# sourceMappingURL=longpress.js.map

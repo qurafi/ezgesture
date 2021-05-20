@@ -11,18 +11,11 @@ const defaults = {
 
 const options = new WeakMap();
 
-export function enableDragEvents(elm, opt = defaults) {
+export function enableDragEvents(elm: Element, opt = defaults) {
     elm.addEventListener("touchstart", onPointerDown, true);
     elm.addEventListener("mousedown", onPointerDown, true);
     options.set(elm, opt);
 }
-
-// create dummy mouse event object to get mouse related properties like e.clientX e.clientY, e.altKey, etc..
-const MOUSE_EVENT_PROPS = Object.keys(
-    Object.getPrototypeOf(new MouseEvent(""))
-);
-
-const TOUCH_EVENT_PROPS = ["changedTouches", "touches", "targetTouches"];
 
 function getPointerPosition(e) {
     if (e.changedTouches) e = e.changedTouches[0];
@@ -96,7 +89,7 @@ function onPointerUp(e) {
     removeDragEvents();
 }
 
-function addOrRemoveEvents(remove) {
+function addOrRemoveEvents(remove = false) {
     const fn = remove ? "removeEventListener" : "addEventListener";
     document[fn]("mouseup", onPointerUp);
     document[fn]("touchend", onPointerUp);
