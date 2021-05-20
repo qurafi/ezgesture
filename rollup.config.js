@@ -1,15 +1,15 @@
-import { terser } from "rollup-plugin-terser";
+import typescript from "rollup-plugin-typescript2";
 
-const files = ["drag", "pinch", "index"];
+const files = ["drag", "pinch", "longpress", "index"];
 
 export default files.map((file) => ({
-    input: `lib/${file}.js`,
+    input: `lib/${file}.ts`,
     output: {
-        file: `dist/${file}.min.js`,
+        file: `dist/${file}.js`,
         format: "umd",
         name: "EZG",
         extend: file !== "index",
         sourcemap: true,
-        plugins: [terser()],
     },
+    plugins: [typescript({ useTsconfigDeclarationDir: true })],
 }));

@@ -21,19 +21,20 @@ Easily add gestures functionality with simple native DOM events
 
 ## Installation
 **NPM**
+
 `npm i ezgesture`
 
 **CDN:**
 
 ```html
 <!-- Full bundle -->
-<script src="https://cdn.jsdelivr.net/npm/ezgesture@1.1.0/dist/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ezgesture@1.1.1/dist/index.min.js"></script>
 <!-- Drag only -->
-<script src="https://cdn.jsdelivr.net/npm/ezgesture@1.1.0/dist/drag.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ezgesture@1.1.1/dist/drag.min.js"></script>
 <!-- Pinch only -->
-<script src="https://cdn.jsdelivr.net/npm/ezgesture@1.1.0/dist/pinch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ezgesture@1.1.1/dist/pinch.min.js"></script>
 <!-- Longpress only -->
-<script src="https://cdn.jsdelivr.net/npm/ezgesture@1.1.0/dist/longpress.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ezgesture@1.1.1/dist/longpress.min.js"></script>
 ```
 
 
@@ -41,13 +42,13 @@ Easily add gestures functionality with simple native DOM events
 ```javascript
 
 // drag events
-EZG.enableDragEvents(elm)
+EZG.enableDragEvents(elm, options?: {threshold: 0})
 elm.addEventListener("ezgdragstart", onDragStart)
 elm.addEventListener("ezgdragmove", onDragMove)
 elm.addEventListener("ezgdragstop", onDragMove)
 
 // pinch events
-EZG.enablePinchEvents(elm)
+EZG.enablePinchEvents(elm, options?: {distanceThreshold: 0, angleThreshold: 0})
 elm.addEventListener("ezgpinchstart", onPinchStart)
 elm.addEventListener("ezgpinchmove", onPinchMove)
 elm.addEventListener("ezgpinchend", onPinchEnd)

@@ -1,6 +1,10 @@
 import { dispatchCustomEvent } from "./shared";
 
-export function enableLongPressEvents(elm, opt = {}) {
+interface Options {
+    duration?: number;
+}
+
+export function enableLongPressEvents(elm: Element, opt: Options = {}) {
     function onPointerDown(e) {
         const timeout = setTimeout(() => {
             dispatchCustomEvent("longpress", elm, {

@@ -1,13 +1,14 @@
 {
     "name": "ezgesture",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Easily add gestures functionality with simple native DOM events",
     "exports": {
-        ".": "./lib/index.js",
-        "./pinch": "./lib/pinch.js",
-        "./drag": "./lib/drag.js",
-        "./longpress": "./lib/longpress.js"
+        ".": "./dist/index.js",
+        "./pinch": "./dist/pinch.js",
+        "./drag": "./dist/drag.js",
+        "./longpress": "./dist/longpress.js"
     },
+    "types": "types/",
     "scripts": {
         "dev": "rollup -cw",
         "build": "rollup -c",
@@ -33,9 +34,13 @@
         "interaction"
     ],
     "devDependencies": {
+        "@rollup/plugin-typescript": "^8.2.1",
         "rollup": "^2.41.5",
         "rollup-plugin-terser": "^7.0.2",
-        "terser": "^5.6.0"
+        "rollup-plugin-typescript2": "^0.30.0",
+        "terser": "^5.6.0",
+        "tslib": "^2.2.0",
+        "typescript": "^4.2.4"
     },
     "author": "Mohammed Al-Qurafi",
     "license": "MIT",

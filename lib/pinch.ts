@@ -17,7 +17,7 @@ const defaults = {
 
 const options = new WeakMap();
 
-export function enablePinchEvents(elm, opt = defaults) {
+export function enablePinchEvents(elm: Element, opt = defaults) {
     options.set(elm, opt);
     elm.addEventListener("touchstart", onTouchStart);
 }
@@ -43,9 +43,8 @@ function onTouchMove(e) {
 
 function pinchStartHandler(e, { dist, angle }) {
     if (startTouches.length != 2) return;
-    const { dist: startDist, angle: startAngle } = calculatePinchProps(
-        startTouches
-    );
+    const { dist: startDist, angle: startAngle } =
+        calculatePinchProps(startTouches);
 
     const { distanceThreshold, angleThreshold } = options.get(e.currentTarget);
 
@@ -59,7 +58,8 @@ function pinchStartHandler(e, { dist, angle }) {
         });
 
         if (isCancelled) {
-            return elm.removeEventListener("touchmove", onTouchMove);
+            e.currentTarget.removeEventListener("touchmove", onTouchMove);
+            return;
         }
 
         activeElement = e.currentTarget;
@@ -114,7 +114,7 @@ function onTouchEnd(e) {
     }
 }
 
-function dispatchPinchEvent(ev, elm, detail, cancelable) {
+function dispatchPinchEvent(ev, elm, detail, cancelable = true) {
     detail = {
         ...detail,
         startTouches,
