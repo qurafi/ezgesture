@@ -17,14 +17,20 @@
             height: 100vh;
             margin: 0;
             touch-action: none;
+
+            background: #333;
         }
 
         div {
-            width: 200px;
-            height: 150px;
-            background-color: #b1b1b1;
-            cursor: move;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: min(20vw, 200px);
+            height: min(20vw, 150px);
             user-select: none;
+            background-color: #ddd;
+            box-shadow: 1px 2px 5px #00000055;
+            padding: 1em;
 
         }
     </style>

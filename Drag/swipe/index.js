@@ -1,7 +1,7 @@
 const div = document.querySelector("div");
 EZG.enableDragEvents(div);
 
-const maxOffset = 200;
+const maxOffset = Math.min(200, window.innerWidth / 4);
 
 div.addEventListener("ezgdragmove", (e) => {
     const { offsetX } = e.detail;
@@ -18,11 +18,8 @@ div.addEventListener("ezgdragstop", (e) => {
     div.style.opacity = "";
 
     if (Math.abs(offsetX) >= maxOffset) {
-        alert("Removed!");
-
         div.style.display = "none";
-        setTimeout(() => {
-            div.style.display = "";
-        }, 300);
+        alert("Removed!");
+        div.style.display = "";
     }
 });

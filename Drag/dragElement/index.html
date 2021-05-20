@@ -16,10 +16,21 @@
         }
 
         div {
-            width: 200px;
-            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: min(20vw, 200px);
+            height: min(20vw, 200px);
             user-select: none;
-            background-color: #b1b1b1;
+            background-color: #ddd;
+            box-shadow: 1px 2px 5px #00000055;
+            padding: 1em;
+        }
+
+        h1 {
+            margin: 0;
+            font-weight: 500;
+            font-size: 14pt;
         }
 
         #box {
@@ -38,7 +49,7 @@
 <body>
     <div id="zone">You cannot overlap me</div>
     <div id="box">
-        <h3>Drag me</h3>
+        <h1>Drag me</h1>
     </div>
 </body>
 
