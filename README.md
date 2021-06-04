@@ -1,10 +1,10 @@
-# EZGesture(~1KB Gzipped)
+# EZGesture(~1KB GZipped)
 ![npm (tag)](https://img.shields.io/npm/v/ezgesture) ![GitHub](https://img.shields.io/github/license/mhmd-22/ezgesture)
 
 Easily add gestures functionality with simple native DOM events
 
 
-- [EZGesture(~1KB Gzipped)](#ezgesture1kb-gzipped)
+- [EZGesture(~1KB GZipped)](#ezgesture1kb-gzipped)
   - [Installation](#installation)
   - [Quick Start](#quick-start)
   - [Usage](#usage)
@@ -76,11 +76,11 @@ You can also supply `threshold` in options to set minimum distance to trigger ev
 **Events**
 - `ezgdragstart` - cancelable with `e.preventDefault()`
 - `ezgdragmove` - cancelable. will stop calculating last offset.
-- `ezgdragend`
+- `ezgdragstop`
 
 
-**Events paramters:**
-Use `e.detail` to access these event paramaters:
+**Events parameters:**
+Use `e.detail` to access these event parameters:
 ```javascript
 
 // Initial drag position
@@ -115,16 +115,16 @@ Available options:
 **cancelable**: Yes, with `e.preventDefault()`
 
 
-**paramaters**:
+**parameters**:
 ```javascript
 startTouches
 originalEvent
 ```
 
 ### `ezgpinchmove`
-**cancelable**: Yes, It will stop calculating `lastXXX` paramaters such as `lastOffset` and `lastDist`
+**cancelable**: Yes, It will stop calculating `lastXXX` parameters such as `lastOffset` and `lastDist`
 
-**paramaters**:
+**parameters**:
 * `dx, dy`: difference between the two touches
 * `da`: angle difference from last movement
 * `dist`: distance between two fingers
@@ -141,7 +141,7 @@ originalEvent
 ### `ezgpinchend`
 **cancelable**: No
 
-**paramaters**:
+**parameters**:
 * `startTouches`
 * `lastTouches`
 * `lastOffset`
@@ -159,7 +159,7 @@ The default duration is `700ms`. and it has only one parameter `originalEvent`
 ## Integration with other frameworks
 
 ### Svelte
-You could also listen to this event with framework that uses native dom events. For example in svelte you could use:
+You could also listen to these events with framework that uses native dom events. For example in svelte you could use:
 
 ```svelte
 <div use:enablePinchEvents={{options}} on:ezgpinchmove={onPinch}></div>

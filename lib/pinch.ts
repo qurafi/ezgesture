@@ -17,15 +17,15 @@ const defaults = {
 
 const options = new WeakMap();
 
-export function enablePinchEvents(elm: Element, opt = defaults) {
+export function enablePinchEvents(elm: HTMLElement, opt = defaults) {
     options.set(elm, opt);
     elm.addEventListener("touchstart", onTouchStart);
 }
 
-function onTouchStart(e) {
+function onTouchStart(this: Element, e: TouchEvent) {
     startTouches = e.touches;
     checkPinch = true;
-    e.currentTarget.addEventListener("touchmove", onTouchMove);
+    this.addEventListener("touchmove", onTouchMove);
 }
 
 function onTouchMove(e) {
@@ -109,7 +109,10 @@ function calculatePinchProps(touches) {
 
 function onTouchEnd(e) {
     if (!checkPinch && activeElement) {
-        dispatchPinchEvent("end", activeElement, null, false);
+        const detail = {
+            originalEvent: e,
+        };
+        dispatchPinchEvent("end", activeElement, detail, false);
         activeElement = undefined;
     }
 }

@@ -55,7 +55,7 @@
     function onTouchStart(e) {
         startTouches = e.touches;
         checkPinch = true;
-        e.currentTarget.addEventListener("touchmove", onTouchMove);
+        this.addEventListener("touchmove", onTouchMove);
     }
     function onTouchMove(e) {
         e.preventDefault();
@@ -119,7 +119,10 @@
     }
     function onTouchEnd(e) {
         if (!checkPinch && activeElement) {
-            dispatchPinchEvent("end", activeElement, null, false);
+            var detail = {
+                originalEvent: e,
+            };
+            dispatchPinchEvent("end", activeElement, detail, false);
             activeElement = undefined;
         }
     }
